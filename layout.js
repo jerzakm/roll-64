@@ -24,6 +24,11 @@ export default class LayoutItem {
         return this;
     }
 
+    setMask(mask) {
+        this.img.mask = mask;
+        return this;
+    }
+
     scaleTo(dim, value){
         if(dim=='x') {
             this.setSize(value, this.img.height*(value/this.img.width));

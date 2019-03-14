@@ -8,3 +8,9 @@ canvas {
     position: fixed;
     top:0;
 }
+
+#buttons {
+    position: fixed;
+    top: 250px;
+    left: 35px;
+}
