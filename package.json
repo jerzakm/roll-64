@@ -1,0 +1,25 @@
+{
+  "name": "roll-64",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerzakm/roll-64.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jerzakm/roll-64/issues"
+  },
+  "homepage": "https://github.com/jerzakm/roll-64#readme",
+  "dependencies": {
+    "pixi.js": "^5.0.0-rc.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3"
+  }
+}

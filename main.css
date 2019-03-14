@@ -1,0 +1,10 @@
+body {
+    margin:0;
+    background: lightgray;
+}
+
+canvas {
+    display: block;
+    position: fixed;
+    top:0;
+}
