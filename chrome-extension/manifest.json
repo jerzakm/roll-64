@@ -1,0 +1,36 @@
+{
+    "name": "Roll 64 - Hexed Realms test",
+    "version": "0.1",
+    "manifest_version": 2,
+    "description": "Roll 20 player avatar and stats display",
+    "permissions": [
+      "webNavigation",
+      "storage",
+      "activeTab",
+      "tabs",
+      "<all_urls>",
+      "file:///*"
+    ],
+    "web_accessible_resources": [
+      "assets/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": [
+          "https://app.roll20.net/editor/*"
+        ],
+        "js": [
+          "libs/pixi.min.js",
+          "content.js",
+          "layout.js",
+          "index.js"
+        ]
+      }
+    ],
+    "background": {
+      "scripts": [
+        "background.js"
+      ],
+      "persistent": false
+    }
+}

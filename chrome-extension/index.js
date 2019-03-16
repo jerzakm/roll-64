@@ -1,19 +1,20 @@
-import LayoutItem from "/layout.js";
+const url = 'chrome-extension://ldbedgmemefaimdbkajbbcmhgicibajh/';
 
+
+const canvas = document.getElementById('roll-64-avatar');
 const pixelBarFill = (val,max,pixelMax) => { return (val/max)*pixelMax };
 
-const canvas = document.getElementById('mycanvas');
 const renderer = new PIXI.Renderer({
     view: canvas,
-    width: 900,
-    height: 500,
+    width: 500,
+    height: 250,
     resolution: window.devicePixelRatio,
     autoDensity:true,
     transparent: true,
     antialias: true
 });
 const stage = new PIXI.Container();
-stage.scale.set(1);
+stage.scale.set(0.8);
 
 const loader = PIXI.Loader.shared;
 const sprites = {};
@@ -47,7 +48,7 @@ let gameRules = {
 
 let avatarSettings = {
     uuid: '',
-    size: 190,
+    size: 170,
     x: 15,
     y: 15
 }
@@ -70,37 +71,15 @@ let barState = {
 
 let clickIncrement = 2;
 
-const controls = [
-    ['left','x',-clickIncrement],
-    ['right','x',clickIncrement],
-    ['up','y',-clickIncrement],
-    ['down','y',clickIncrement],
-    ['scale_up','size',clickIncrement],
-    ['scale_down','size',-clickIncrement],
-];
-
-for (let c of controls) {
-    document.getElementById(c[0]).addEventListener("click", function(){
-        avatarSettings[c[1]]+=c[2];
-        layoutRender();
-    });
-}
-document.getElementById('xp_up').addEventListener("click", function(){
-    playerState.xp+=50;
-});
-document.getElementById('xp_down').addEventListener("click", function(){
-    playerState.xp-=50;
-});
-
-loader.add('avatarFrame', 'assets/player_ring_frame.png');
-loader.add('avatarBg', 'assets/player_ring_bg.png');
-loader.add('resourceBar', 'assets/bar_bg.png');
-loader.add('food', 'assets/food.png');
-loader.add('water', 'assets/water.png');
-loader.add('xp', 'assets/xp.png');
-loader.add('inventory', 'assets/inventory.png');
-loader.add('settings', 'assets/settings.png');
-loader.add('avatar', 'assets/default_avatar.png');
+loader.add('avatarFrame', url+'assets/player_ring_frame.png');
+loader.add('avatarBg', url+'assets/player_ring_bg.png');
+loader.add('resourceBar', url+'assets/bar_bg.png');
+loader.add('food', url+'assets/food.png');
+loader.add('water', url+'assets/water.png');
+loader.add('xp', url+'assets/xp.png');
+loader.add('inventory', url+'assets/inventory.png');
+loader.add('settings', url+'assets/settings.png');
+loader.add('avatar', url+'assets/default_avatar.png');
 
 loader.load((loader, resources) => {
     sprites.avatarFrame = new PIXI.Sprite(resources.avatarFrame.texture);

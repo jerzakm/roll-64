@@ -1,4 +1,4 @@
-export default class LayoutItem {
+class LayoutItem {
     constructor() {
     }
 
